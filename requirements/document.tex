@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+
+\title{
+  \Huge Advanced Game Programming \\
+  \vspace{0.4cm}
+  \large Prozedurale Sterne: Anforderungen
+}
+
+\author{
+  Florian Hansen \and
+  Markus Behnisch \and
+  Julian Kasiske
+}
+
+\begin{document}
+  \maketitle
+
+  \section{Funktionale Anforderungen}
+  \setlist[enumerate]{label*={\arabic*.}}
+  \begin{enumerate}
+
+    \vspace{0.5cm}
+
+    {\bfseries\large\item Eckpunkte einer Kugel}
+    \begin{enumerate}
+      \item Die einfache Implementierung von Unity (und anderen Tools) einer
+        Kugel besitzt eine Überabtastung in den Polen, sodass ein anderer
+        Algorithmus zum Erzeugen verwendet werden soll.
+      \item Es soll ein Algorithmus in Unity implementiert werden, welcher einen
+        Icosahedron mit einem individuellen Level-Of-Detail erzeugt.
+      \item Es sollen \texttt{vertex}-, \texttt{index}- und
+        \texttt{uv}-Koordinaten berechnet werden.
+      \item Es soll ein Benutzerelement erstellt werden, welches den Algorithmus
+        ausführt und das entsprechende Mesh erzeugt.
+    \end{enumerate}
+
+    \vspace{0.5cm}
+
+    {\bfseries\large\item Textur der Sonnenoberfläche}
+    \begin{enumerate}
+      \item Es soll ein Algorithmus implementiert werden, welcher die
+        Sonnenoberfläche prozedural darstellen soll.
+      \item Die grundlegende Textur soll mithilfe eines
+        Cellular-Noise-Al\-go\-rith\-mus' generiert werden.
+      \item Es soll der Combustible-Voronoi-Algorithmus' verwendet
+        werden, um das "Plasma" der Sonne darzustellen.
+    \end{enumerate}
+
+    \vspace{0.5cm}
+
+    {\bfseries\large\item Deformation der Sonnenoberfläche}
+    \begin{enumerate}
+      \item Die Oberfläche der Sonne besteht aus Plasma, d.h. es soll ein Shader
+        entwickelt werden, der die Oberfläche der Kugel manipuliert, sodass sie
+        sich ähnlich wie Wasser verhält.
+    \end{enumerate}
+
+    \vspace{0.5cm}
+
+    {\bfseries\large\item Sonneneruptionen}
+    \begin{enumerate}
+      \item Es sollen
+        Sonnenstürme\footnote{https://solarscience.msfc.nasa.gov/flares.shtml}
+        (Eruptionen) implementiert werden, die aus der Sonnenoberfläche
+        schießen.
+      \item Eruptionen sind Explosionen auf der Sonnenoberfläche und werden
+        durch magnetische Felder erzeugt. Es sind also einfache Explosionen, die
+        durch Partikelsysteme dargestellt werden sollen.
+      \item Diese ausgesendeten Partikel einer Explosion sollen dann entlang des
+        magnetischen Feldes (vom Pluspol zum Minuspol) wandern.
+      \item Die magnetische Laufbahn der Partikel soll zur Vereinfachung als
+        Parabel angenommen werden.
+    \end{enumerate}
+
+  \end{enumerate}
+\end{document}
