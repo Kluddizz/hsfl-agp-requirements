@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage[ngerman]{babel}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{placeins}
 
 \title{
   \Huge Advanced Game Programming \\
@@ -46,6 +48,10 @@
         Cellular-Noise-Al\-go\-rith\-mus' generiert werden.
       \item Es soll der Combustible-Voronoi-Algorithmus' verwendet
         werden, um das "Plasma" der Sonne darzustellen.
+      \item Die Textur soll Sonnenflecken berücksichtigen.
+      \item Je älter bzw. kälter die Sonne ist (siehe
+        Abb.~\ref{img:life-cycle-sun}), desto mehr soll sich die Farbe der
+        Oberfläche verändern.
     \end{enumerate}
 
     \vspace{0.5cm}
@@ -56,24 +62,45 @@
         wellenartig bewegt.
       \item Der zu entwickelnde Shader soll die Oberfläche der Kugel
         manpulieren, sodass sich diese ähnlich wie Wasser verhält.
+      \item Je älter die Sonne ist, desto größer bzw. kleiner soll sie
+        erscheinen (siehe Abb.~\ref{img:life-cycle-sun}).
     \end{enumerate}
 
     \vspace{0.5cm}
 
-    {\bfseries\large\item Sonneneruptionen}
+    {\bfseries\large\item Protuberanzen}
     \begin{enumerate}
       \item Es sollen
-        Sonnenstürme\footnote{https://solarscience.msfc.nasa.gov/flares.shtml}
-        (Eruptionen) implementiert werden, die aus der Sonnenoberfläche
-        schießen.
-      \item Eruptionen sind Explosionen auf der Sonnenoberfläche und werden
-        durch magnetische Felder erzeugt. Es sind also einfache Explosionen, die
-        durch Partikelsysteme dargestellt werden sollen.
-      \item Diese ausgesendeten Partikel einer Explosion sollen dann entlang des
-        magnetischen Feldes (vom Pluspol zum Minuspol) wandern.
-      \item Die magnetische Laufbahn der Partikel soll zur Vereinfachung als
-        Parabel angenommen werden.
+        Protuberanzen\footnote{https://de.wikipedia.org/wiki/Protuberanz}
+        implementiert werden, die aus der Sonnenoberfläche schießen.
+      \item Es sollen ruhende Protuberanzen implementiert werden.
+      \begin{enumerate}
+        \item Diese sollen sich über die Zeit kaum verändern, das heißt, die
+          Magnetfeldlinien, die sie erzeugen verändern sich nicht.
+        \item Sie sollen dunkler dargestellt werden, als die Umgebung, da sie
+          durch ihre Starrheit abkühlen.
+      \end{enumerate}
+      \item Es sollen eruptive Protuberanzen (Sonneneruptionen) implementiert werden.
+      \begin{enumerate}
+        \item Eruptionen sind Explosionen auf der Sonnenoberfläche und werden
+          durch magnetische Felder erzeugt. Es sind also einfache Explosionen, die
+          durch Partikelsysteme dargestellt werden sollen.
+        \item Diese ausgesendeten Partikel einer Explosion sollen dann entlang des
+          magnetischen Feldes (vom Pluspol zum Minuspol) wandern.
+        \item Die magnetische Laufbahn der Partikel soll zur Vereinfachung als
+          Parabel angenommen werden.
+      \end{enumerate}
     \end{enumerate}
 
   \end{enumerate}
+
+  \newpage
+  \begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{images/life_cycle_sun.png}
+    \caption[Lebenszyklus der Sonne]{Lebenszyklus der
+    Sonne\footnotemark}
+    \label{img:life-cycle-sun}
+  \end{figure}
+  \footnotetext{https://de.wikipedia.org/wiki/Sonne}
 \end{document}
